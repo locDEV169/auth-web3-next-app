@@ -1,7 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit'
-// import accountReducer from '../features/accountSlice'
-import accountReducer from '../features/accountSlice'
-import configReducer from '../features/configSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import accountReducer from "../features/accountSlice";
+import configReducer from "../features/configSlice";
 
 export const store = configureStore({
   reducer: {
@@ -13,3 +12,6 @@ export const store = configureStore({
       serializableCheck: false,
     }),
 });
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;

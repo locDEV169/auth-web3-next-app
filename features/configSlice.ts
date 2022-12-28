@@ -8,11 +8,13 @@ const initialState = {
   usdtContractAddress: "",
 };
 
-export const loadConfig = createAsyncThunk(
+export const loadConfig: any = createAsyncThunk(
   "config/load",
   async (_, { dispatch }) => {
     fetch("/api/config")
-      .then((response) => response.json())
+      .then((response) => {
+        response.json();
+      })
       .then((json) => dispatch(received(json)));
   }
 );
@@ -22,11 +24,13 @@ export const configSlice = createSlice({
   initialState,
   reducers: {
     received: (state, { payload }) => {
-      state.name = payload.name;
-      state.infuraId = payload.infura_id;
-      state.chainId = payload.chain_id;
-      state.networkName = payload.network_name;
-      state.usdtContractAddress = payload.usdt_contract_address;
+      console.log('payload in config Slice',payload);
+
+      state.name = payload?.name;
+      state.infuraId = payload?.infura_id;
+      state.chainId = payload?.chain_id;
+      state.networkName = payload?.network_name;
+      state.usdtContractAddress = payload?.usdt_contract_address;
     },
   },
 });
