@@ -15,7 +15,8 @@ export const formatAddress = (address, padding = 4) => {
 };
 
 export const formatBalance = (balanceInWei) => {
-  return parseFloat(utils.formatEther(BigNumber.from(balanceInWei))).toFixed(4)
+  console.log('balanceInWei', balanceInWei);
+  return parseFloat(utils?.formatEther(BigNumber?.from(balanceInWei))).toFixed(4) || 0
 }
 
 

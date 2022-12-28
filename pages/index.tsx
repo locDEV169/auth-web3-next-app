@@ -41,10 +41,10 @@ export default function Home() {
           <div className="px-10">
             <h1 className="text-3xl font-semibold mb-5">Token Balance</h1>
 
-            {/* <div className="flex flex-col">
-              <span>{formatBalance(account.balance)} ETH</span>
-              <span>{formatBalance(account.usdtBalance)} USDT</span>
-            </div> */}
+            <div className="flex flex-col">
+              {/* <span>{formatBalance(account.balance)} ETH</span>
+              <span>{formatBalance(account.usdtBalance)} USDT</span> */}
+            </div>
           </div>
         )}
       </main>
